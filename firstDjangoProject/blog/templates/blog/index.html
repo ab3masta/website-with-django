@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+
+
+{% block title %}Blog{% endblock %}
+
+
+{% block body %}
+<h1>{{posts|length}} posts</h1>
+{% for post in posts %}
+<article>
+    <h2 class="title"><a href=" {% url 'blog:show' id=post.id %} ">{{post.title|upper}}</a></h2>
+    <p> {{post.body|truncatewords:3 }} </p>
+    <p class="time"> <time datetime=" {{ post.create_at|date:'Y-m-d' }} "> Posted at {{ post.create_at|timesince }} ago </time> </p>
+    <p class="content"><a href="{% url 'blog:show' post.id %}"> Lire la suite</a></p>
+</article>
+
+{% empty %}
+<p>Sorry, no post available</p>
+{% endfor %}
+{% endblock %}

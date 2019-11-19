@@ -1,0 +1,10 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}
+HomePage
+{% endblock %}
+
+{% block content %}
+<h1>My name is Aboubacar</h1>
+<p><a href=" {% url 'blog:index' %} "> Visiter le blog</a></p>
+{% endblock %}

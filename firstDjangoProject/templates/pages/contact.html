@@ -1,0 +1,10 @@
+{% extends "layouts/base.html" %}
+{% block title %}
+Contact
+{% endblock %}
+
+{% block content %}
+<h1> Contact</h1>
+<p> {{error}}</p>
+<p> {% lorem 5 %}<a href=" {% url 'home' %} "> homePage</a>.</p>
+{% endblock %}

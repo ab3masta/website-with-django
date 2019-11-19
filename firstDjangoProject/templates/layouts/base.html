@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <title>{% block title %}FirstDjangoProject{% endblock %}</title>
+        <meta name="viewport" content="width=content-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href=" {% static 'css/style.css' %} ">
+
+        {% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+        {% include 'layouts/_nav.html'%}
+        <div class="wrapper">
+                {% block content %}{% endblock %}
+                {% include 'layouts/_footer.html'%}
+        </div>
+        {% block javascripts %}{% endblock %}
+</body>
+
+</html>
